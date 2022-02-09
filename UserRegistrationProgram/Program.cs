@@ -15,7 +15,7 @@ namespace UserRegistrationProgram
 
             while(true)
             {
-                Console.WriteLine("1: Enter First Name \n2: Enter Last Name \n3: Enter Email Id \n4: Exit");
+                Console.WriteLine("1: Enter Your First Name \n2: Enter Your Last Name \n3: Enter Your Email Id \n4: Enter Your Mobile Number \n5: Exit");
                 Console.Write("Enter a choice from above : ");
                 bool resVal = int.TryParse(Console.ReadLine(), out int choice);
                 if(resVal)
@@ -35,6 +35,10 @@ namespace UserRegistrationProgram
                             RegexPattern.CheckEmail();
                             break;
                         case 4:
+                            //Validating that user entered a valid mobile number or not(UC4)
+                            RegexPattern.CheckMobileNumber();
+                            break;
+                        case 5:
                             Environment.Exit(0);
                             break;
                         default:

@@ -56,7 +56,24 @@ namespace UserRegistrationProgram
             else
             {
                 Console.WriteLine("The given email id is not valid\n");
-                CheckLastName();
+                CheckEmail();
+            }
+        }
+
+        //Method to check and take the valid mobile number using regex(UC4)
+        public static void CheckMobileNumber()
+        {
+            Console.Write("Enter Your Mobile Number : ");
+            string mobileNum = Console.ReadLine();
+
+            //Pattern for checking the mobile number(UC4)
+            string mobNumPattern = "^91[ ][1-9][0-9]{9}$";
+            if (Regex.IsMatch(mobileNum, mobNumPattern))
+                Console.WriteLine("The given mobile number is valid\n");
+            else
+            {
+                Console.WriteLine("The number should follow 91 10 digits E.g. 91 9919819801\n");
+                CheckMobileNumber();
             }
         }
     }
