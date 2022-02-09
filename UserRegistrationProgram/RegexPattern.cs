@@ -76,5 +76,22 @@ namespace UserRegistrationProgram
                 CheckMobileNumber();
             }
         }
+
+        //Method to check and take the valid mobile number using regex(UC5)
+        public static void CheckPassword()
+        {
+            Console.Write("Enter Your password : ");
+            string password = Console.ReadLine();
+
+            //Pattern for checking the password(UC5)
+            string passwordPattern = "^[a-zA-Z]{8,}$";
+            if (Regex.IsMatch(password, passwordPattern))
+                Console.WriteLine("The given password is valid\n");
+            else
+            {
+                Console.WriteLine("The given password is not valid\n");
+                CheckPassword();
+            }
+        }
     }
 }
