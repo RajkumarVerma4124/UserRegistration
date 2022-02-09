@@ -77,15 +77,18 @@ namespace UserRegistrationProgram
             }
         }
 
-        //Method to check and take the valid mobile number using regex(UC5,UC6 & UC7)
+        //Method to check and take the valid password using regex(UC5,UC6,UC7 & UC8)
         public static void CheckPassword()
         {
             Console.Write("Enter Your password : ");
             string password = Console.ReadLine();
 
-            //Pattern for checking the password for having atleast one uppercase and number(UC5,UC6 & UC7)
-            string passwordPattern = "^(?=.*[A-Z])(?=.*[0-9])[0-9a-zA-Z]{8,}$";
-            if (Regex.IsMatch(password, passwordPattern))
+            //Pattern for checking the password for having atleast one uppercase and number and exactly one special character(UC5,UC6,UC7 & UC8)
+            string passwordPattern = "^(?=.*[A-Z])(?=.*[\\d])(?=.*[\\W])[a-zA-Z0-9[~!@#$%^&*()_+{}:\"<>?]{8,}$";
+            string specialChar = "[~!@#$%^&*()_+{}:\" <>?]";
+            int count = Regex.Matches(password, specialChar).Count;
+            Console.WriteLine(count);
+            if (Regex.IsMatch(password, passwordPattern) && count == 1)
                 Console.WriteLine("The given password is valid\n");
             else
             {
