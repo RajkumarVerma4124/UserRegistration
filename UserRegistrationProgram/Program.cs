@@ -13,10 +13,34 @@ namespace UserRegistrationProgram
             //Displaying the welcome message
             Console.WriteLine("Welcome To The User Registration Program\n");
 
-            //Validating user entered a valid firstname or not(UC1)
-           
-            RegexPattern.CheckFirstName();
-            Console.ReadLine();
+            while(true)
+            {
+                Console.WriteLine("1: Enter First Name \n2: Enter Last Name \n3: Exit");
+                Console.Write("Enter a choice from above : ");
+                bool resVal = int.TryParse(Console.ReadLine(), out int choice);
+                if(resVal)
+                {
+                    switch(choice)
+                    {
+                        case 1:
+                            //Validating that user entered a valid firstname or not(UC1)
+                            RegexPattern.CheckFirstName();
+                            break;
+                        case 2:
+                            //Validating that user entered a valid lastname or not(UC2)
+                            RegexPattern.CheckLastName();
+                            break;
+                        case 3:
+                            Environment.Exit(0);
+                            break;
+                        default:
+                            Console.WriteLine("Enter a valid choice\n");
+                            continue;
+                    }
+                }
+                else
+                    Console.WriteLine("Enter some input value\n");
+            }
         }
     }
 }
