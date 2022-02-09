@@ -77,7 +77,7 @@ namespace UserRegistrationProgram
             }
         }
 
-        //Method to check and take the valid mobile number using regex(UC5,UC6 & UC7)
+        //Method to check and take the valid password using regex(UC5,UC6 & UC7)
         public static void CheckPassword()
         {
             Console.Write("Enter Your password : ");
