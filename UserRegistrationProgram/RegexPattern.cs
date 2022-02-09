@@ -52,10 +52,14 @@ namespace UserRegistrationProgram
             //Pattern for checking the email id(UC3)
             string emailIdPattern = "^[a-zA-Z0-9]{3,7}([._+-][0-9a-zA-Z]{1,7})*@[0-9a-zA-Z]+[.]?([a-zA-Z]{2,4})+[.]?([a-zA-Z]{2,3})*$";
             if (Regex.IsMatch(emailId, emailIdPattern))
+            {
                 Console.WriteLine("The given email id is valid\n");
+                NLog.SuccessInfo("The given email id is valid "+emailId);
+            }   
             else
             {
                 Console.WriteLine("The given email id is not valid\n");
+                NLog.ErrorInfo("The given email id is not valid "+emailId);
                 CheckEmail();
             }
         }

@@ -1,0 +1,25 @@
+﻿2022-02-09 16:41:08.3667 INFO The given email id is valid abc@yahoo.com
+2022-02-09 16:43:38.0203 INFO The given email id is valid abc-100@yahoo.com
+2022-02-09 16:43:48.9810 INFO The given email id is valid abc.100@yahoo.com
+2022-02-09 16:44:00.0836 ERROR The given email  id is not valid abc111@abc.com,
+2022-02-09 16:44:08.3090 INFO The given email id is valid abc111@abc.com
+2022-02-09 16:44:29.9238 INFO The given email id is valid abc-100@abc.net
+2022-02-09 16:44:56.5740 INFO The given email id is valid abc.100@abc.com.au
+2022-02-09 16:45:07.1861 ERROR The given email  id is not valid abc@1.com,
+2022-02-09 16:45:10.4124 INFO The given email id is valid abc@1.com
+2022-02-09 16:45:24.0140 INFO The given email id is valid abc@gmail.com.com
+2022-02-09 16:45:36.5002 INFO The given email id is valid abc+100@gmail.com
+2022-02-09 16:45:49.9153 ERROR The given email  id is not valid abc
+2022-02-09 16:45:50.0092 ERROR The given email  id is not valid 
+2022-02-09 16:46:06.4615 ERROR The given email  id is not valid abc@.com.my
+2022-02-09 16:46:15.7315 ERROR The given email  id is not valid abc123@gmail.a
+2022-02-09 16:46:27.4815 ERROR The given email  id is not valid abc123@.com
+2022-02-09 16:46:36.9500 ERROR The given email  id is not valid .abc@abc.com
+2022-02-09 16:46:45.1818 ERROR The given email  id is not valid abc()*@gmail.com
+2022-02-09 16:46:54.2483 ERROR The given email  id is not valid abc@%*.com
+2022-02-09 16:47:06.1665 ERROR The given email  id is not valid abc..2002@gmail.com
+2022-02-09 16:47:15.2544 ERROR The given email  id is not valid abc.@gmail.com
+2022-02-09 16:47:24.3070 ERROR The given email  id is not valid abc@abc@gmail.com
+2022-02-09 16:47:32.0632 ERROR The given email  id is not valid abc@gmail.com.1a
+2022-02-09 16:47:41.4122 ERROR The given email  id is not valid abc@gmail.com.aa.au
+2022-02-09 16:47:55.4925 INFO The given email id is valid abc@yahoo.in
