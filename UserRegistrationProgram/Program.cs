@@ -13,7 +13,8 @@ namespace UserRegistrationProgram
         {
             //Displaying the welcome message
             Console.WriteLine("Welcome To The User Registration Program");
-
+            
+            //Exception handling
             try
             {
                 while (true)
@@ -27,27 +28,37 @@ namespace UserRegistrationProgram
                         {
                             case 1:
                                 //Validating that user entered a valid firstname or not(UC1)
-                                result = RegexPattern.CheckFirstName();
+                                Console.Write("Enter Your First Name : ");
+                                string firstName = Console.ReadLine();
+                                result = RegexPattern.CheckFirstName(firstName);
                                 Console.Write(result);
                                 break;
                             case 2:
                                 //Validating that user entered a valid lastname or not(UC2)
-                                result = RegexPattern.CheckLastName();
+                                Console.Write("Enter Your Last Name : ");
+                                string lastName = Console.ReadLine();
+                                result = RegexPattern.CheckLastName(lastName);
                                 Console.Write(result);
                                 break;
                             case 3:
                                 //Validating that user entered a valid lastname or not(UC3)
-                                result = RegexPattern.CheckEmail();
+                                Console.Write("Enter Your Email Id : ");
+                                string emailId = Console.ReadLine();
+                                result = RegexPattern.CheckEmail(emailId);
                                 Console.Write(result);
                                 break;
                             case 4:
                                 //Validating that user entered a valid mobile number or not(UC4)
-                                result = RegexPattern.CheckMobileNumber();
+                                Console.Write("Enter Your Mobile Number : ");
+                                string mobileNum = Console.ReadLine();
+                                result = RegexPattern.CheckMobileNumber(mobileNum);
                                 Console.Write(result);
                                 break;
                             case 5:
                                 //Validating that user entered a valid password or not(UC5)
-                                result = RegexPattern.CheckPassword();
+                                Console.Write("Enter Your password : ");
+                                string password = Console.ReadLine();
+                                result = RegexPattern.CheckPassword(password);
                                 Console.Write(result);
                                 break;
                             case 6:
