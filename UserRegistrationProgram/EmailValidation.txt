@@ -23,3 +23,5 @@
 2022-02-09 16:47:32.0632 ERROR The given email  id is not valid abc@gmail.com.1a
 2022-02-09 16:47:41.4122 ERROR The given email  id is not valid abc@gmail.com.aa.au
 2022-02-09 16:47:55.4925 INFO The given email id is valid abc@yahoo.in
+2022-02-11 12:59:28.9515 ERROR The given email id is not valid 
+2022-02-11 13:38:17.7060 INFO The given email id is valid raj@yahoo.com

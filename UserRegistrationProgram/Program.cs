@@ -8,50 +8,63 @@ namespace UserRegistrationProgram
 {
     internal class Program
     {
+        public static string result;
         static void Main(string[] args)
         {
             //Displaying the welcome message
-            Console.WriteLine("Welcome To The User Registration Program\n");
+            Console.WriteLine("Welcome To The User Registration Program");
 
-            while(true)
+            try
             {
-                Console.WriteLine("1: Enter Your First Name \n2: Enter Your Last Name \n3: Enter Your Email Id \n4: Enter Your Mobile Number \n5: Enter Your Password \n6: Exit");
-                Console.Write("Enter a choice from above : ");
-                bool resVal = int.TryParse(Console.ReadLine(), out int choice);
-                if(resVal)
+                while (true)
                 {
-                    switch(choice)
+                    Console.WriteLine("\n1: Enter Your First Name \n2: Enter Your Last Name \n3: Enter Your Email Id \n4: Enter Your Mobile Number \n5: Enter Your Password \n6: Exit");
+                    Console.Write("Enter a choice from above : ");
+                    bool resVal = int.TryParse(Console.ReadLine(), out int choice);
+                    if (resVal)
                     {
-                        case 1:
-                            //Validating that user entered a valid firstname or not(UC1)
-                            RegexPattern.CheckFirstName();
-                            break;
-                        case 2:
-                            //Validating that user entered a valid lastname or not(UC2)
-                            RegexPattern.CheckLastName();
-                            break;
-                        case 3:
-                            //Validating that user entered a valid lastname or not(UC3)
-                            RegexPattern.CheckEmail();
-                            break;
-                        case 4:
-                            //Validating that user entered a valid mobile number or not(UC4)
-                            RegexPattern.CheckMobileNumber();
-                            break;
-                        case 5:
-                            //Validating that user entered a valid password or not(UC5)
-                            RegexPattern.CheckPassword();
-                            break;
-                        case 6:
-                            Environment.Exit(0);
-                            break;
-                        default:
-                            Console.WriteLine("Enter a valid choice\n");
-                            continue;
+                        switch (choice)
+                        {
+                            case 1:
+                                //Validating that user entered a valid firstname or not(UC1)
+                                result = RegexPattern.CheckFirstName();
+                                Console.Write(result);
+                                break;
+                            case 2:
+                                //Validating that user entered a valid lastname or not(UC2)
+                                result = RegexPattern.CheckLastName();
+                                Console.Write(result);
+                                break;
+                            case 3:
+                                //Validating that user entered a valid lastname or not(UC3)
+                                result = RegexPattern.CheckEmail();
+                                Console.Write(result);
+                                break;
+                            case 4:
+                                //Validating that user entered a valid mobile number or not(UC4)
+                                result = RegexPattern.CheckMobileNumber();
+                                Console.Write(result);
+                                break;
+                            case 5:
+                                //Validating that user entered a valid password or not(UC5)
+                                result = RegexPattern.CheckPassword();
+                                Console.Write(result);
+                                break;
+                            case 6:
+                                Environment.Exit(0);
+                                break;
+                            default:
+                                Console.WriteLine("Enter a valid choice");
+                                continue;
+                        }
                     }
+                    else
+                        Console.WriteLine("Enter some input value");
                 }
-                else
-                    Console.WriteLine("Enter some input value\n");
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }
