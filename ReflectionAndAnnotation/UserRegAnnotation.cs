@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserRegisterWithAnnotation
+namespace ReflectionAndAnnotation
 {
     /// <summary>
     /// Declaring properties of user registration and using inbuilt annotations(UC12)
@@ -15,7 +15,7 @@ namespace UserRegisterWithAnnotation
         //Checking the pattern for first name and giving required annotations for first name property
         [Required(ErrorMessage = "{0} should not be empty")]
         [StringLength(25, MinimumLength = 3, ErrorMessage = "First name should starts with Cap and should have minimum 3 characters")]
-        [RegularExpression(@"^[A-Z]{1}[a-z]{2,}$", ErrorMessage = "First name is not balid")]
+        [RegularExpression(@"^[A-Z]{1}[a-z]{2,}$", ErrorMessage = "First name is not valid")]
         [DataType(DataType.Text)]
         public string FirstName { get; set; }
 
@@ -33,7 +33,7 @@ namespace UserRegisterWithAnnotation
         public string EmailId { get; set; }
 
         //Checking the pattern for phone number and giving required annotations for phone num property
-        [Required(ErrorMessage = "should not be empty")]
+        [Required(ErrorMessage = "{0} should not be empty")]
         [DataType(DataType.PhoneNumber)]
         [StringLength(13, MinimumLength = 13, ErrorMessage = "Phone number is not valid")]
         [RegularExpression(@"^91[ ][1-9][0-9]{9}$", ErrorMessage = "The mobile number should follow 91 10 digits E.g. 91 9919819801")]

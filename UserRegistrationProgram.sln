@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegistrationProgram", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegistrationTesting", "UserRegistrationTesting\UserRegistrationTesting.csproj", "{60E7A7AD-5210-4D75-94DC-788AB71547C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegisterWithAnnotation", "ReflectionAndAnnotation\UserRegisterWithAnnotation.csproj", "{855C9689-6896-4CC9-A1DF-504BBAA993AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionAndAnnotation", "ReflectionAndAnnotation\ReflectionAndAnnotation.csproj", "{855C9689-6896-4CC9-A1DF-504BBAA993AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
