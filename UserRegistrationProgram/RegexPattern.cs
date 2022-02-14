@@ -80,7 +80,7 @@ namespace UserRegistrationProgram
             try
             {
                 //Pattern for checking the email id(UC3)
-                string emailIdPattern = "^[a-zA-Z0-9]{3,7}([._+-][0-9a-zA-Z]{1,7})*@[0-9a-zA-Z]+[.]?([a-zA-Z]{2,4})+[.]?([a-zA-Z]{2,3})*$";
+                string emailIdPattern = "^[a-zA-Z0-9]{3,}([._+-][0-9a-zA-Z]{2,})*@[0-9a-zA-Z]+[.]?([a-zA-Z]{2,4})+[.]?([a-zA-Z]{2,3})*$";
 
                 if (emailId.Equals(""))
                 {
