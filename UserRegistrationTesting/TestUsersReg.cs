@@ -160,26 +160,5 @@ namespace UserRegistrationTesting
                 Assert.AreEqual(expected, ex.Message);
             }         
         }
-
-        //Test case for invoking method(UC13)
-        [TestCategory("Reflection")]
-        [TestMethod]
-        [DataRow("TestUserRegAnnotationProperties", "Raj", "Raj")]
-        [DataRow("TestUserRegAnnotationProperties", "Verma", "Verma")]
-        public void TestInvokeUserRegMethod(string propertyName, string propertyValue, string expected)
-        {
-            try
-            {
-                UserRegReflector userRegReflector = new UserRegReflector();
-                ///Act
-                var actual = userRegReflector.SetProperty(propertyName, propertyValue);
-                ///Asert
-                Assert.AreEqual(expected, actual);
-            }
-            catch (UserRegCustomException ex)
-            {
-                Assert.AreEqual(expected, ex.Message);
-            }
-        }
     }
 }
