@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UserRegistrationProgram
 {
-    public class UserRegistrationException: Exception
+    /// <summary>
+    /// Custom Exceptions By Using System Exception Class
+    /// </summary>
+    public class UserRegistrationException : Exception
     {
         //Declaring exception type 
         public ExceptionTypes type;

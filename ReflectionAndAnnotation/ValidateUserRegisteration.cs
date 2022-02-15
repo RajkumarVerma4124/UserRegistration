@@ -15,19 +15,17 @@ namespace ReflectionAndAnnotation
         private readonly UserRegAnnotation userRegAnnotation;
 
         //Default Constructor
-        public ValidateUserRegisteration()
-        {
-            
-        }
+        public ValidateUserRegisteration(){ }
+
+        //Parameterized constructor
         public ValidateUserRegisteration(UserRegAnnotation annotation)
         {
             this.userRegAnnotation = annotation;
         }
 
+        //Method to take the input value from user and setting feild using reflection(UC13)
         public void ValidateUser()
         {
-           
-
             //Taking input from the user for user registraton and storing in an object
             Console.Write("Enter your first name : ");
             string firstName = Console.ReadLine();
@@ -62,14 +60,10 @@ namespace ReflectionAndAnnotation
             if (!valid)
             {
                 foreach (ValidationResult validationResult in validationResults)
-                {
                     Console.WriteLine("{0}", validationResult.ErrorMessage);
-                }
             }
             else
-            {
                 Console.WriteLine("Satisfied all validations for user registration");
-            }
             Console.ReadLine();
         }
     }

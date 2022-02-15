@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace ReflectionAndAnnotation
 {
@@ -30,35 +24,30 @@ namespace ReflectionAndAnnotation
                     return obj;
                 }
                 else
-                {
                     throw new UserRegCustomException(UserRegCustomException.ExceptionType.CONSTRUCTOR_NOT_FOUND, "No Such Constructor");
-                }
             }
             else
-            {
                 throw new UserRegCustomException(UserRegCustomException.ExceptionType.CLASS_NOT_FOUND, "No Such Class");
-            }
         }
 
         //Method to set the field dynamically using reflection(UC13)
-        public void SetProperty(string PropertyName, string userValue)
-        {
-            try
-            {   
-                Type type = userReg.GetType();
-                //Get Property for which value is to be assigned
-                PropertyInfo propertyInfo = type.GetProperty(PropertyName);
-                //Set Value for that Property
-                if(propertyInfo != null)
+        public string SetProperty(string PropertyName, string userValue)
+        {   
+            Type type = userReg.GetType();
+            //Get Property for which value is to be assigned
+            PropertyInfo propertyInfo = type.GetProperty(PropertyName);
+            //Set Value for that Property
+            if(propertyInfo == null)
+                throw new UserRegCustomException(UserRegCustomException.ExceptionType.FIELD_NOT_EXIST, "No such field found");
+            else
+            { 
+                if (PropertyName.Equals(propertyInfo.Name))
                 {
-                    if(PropertyName.Equals(propertyInfo.Name))
-                        propertyInfo.SetValue(userReg, userValue, null);
+                    propertyInfo.SetValue(userReg, userValue, null);
+                    return userValue;
                 }
             }
-            catch (NullReferenceException)
-            {
-                throw new UserRegCustomException(UserRegCustomException.ExceptionType.FIELD_NOT_EXIST, "No such field found");
-            }
+            return default;
         }
 
         //Method to Use Reflection To Invoke Method(UC13)

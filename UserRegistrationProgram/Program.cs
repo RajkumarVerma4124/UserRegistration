@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UserRegistrationProgram
 {
-    internal class Program
+    /// <summary>
+    /// Program for validating user registartion feild using regex
+    /// </summary>
+    public class Program
     {
+        //Declaring variable
         public static string result;
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //Displaying the welcome message
             Console.WriteLine("Welcome To The User Registration Program");
             
-            //Exception handling
+            //User registration progrm with exception handling
             try
             {
                 while (true)

@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ReflectionAndAnnotation\ReflectionAndAnnotation.csproj">
+      <Project>{855C9689-6896-4CC9-A1DF-504BBAA993AB}</Project>
+      <Name>ReflectionAndAnnotation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UserRegistrationProgram\UserRegistrationProgram.csproj">
       <Project>{764461b4-b16c-426f-b00d-51f5a43cb8b2}</Project>
       <Name>UserRegistrationProgram</Name>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UserRegistrationProgram;
-using System;
+using ReflectionAndAnnotation;
 
 namespace UserRegistrationTesting
 {
@@ -22,7 +22,6 @@ namespace UserRegistrationTesting
         {
             ///Act
             string actual = RegexPattern.CheckFirstName(userData);
-
             ///Asert
             Assert.AreEqual(expected, actual);
         }
@@ -42,7 +41,6 @@ namespace UserRegistrationTesting
         {
             ///Act
             string actual = RegexPattern.CheckLastName(userData);
-
             ///Asert
             Assert.AreEqual(expected, actual);
         }
@@ -79,11 +77,9 @@ namespace UserRegistrationTesting
         {
             ///Act
             string actual = RegexPattern.CheckEmail(userData);
-
             ///Asert
             Assert.AreEqual(expected, actual);
         }
-
 
         //Test case for validating phone number
         [TestCategory("User Phone Number")]
@@ -102,7 +98,6 @@ namespace UserRegistrationTesting
         {
             ///Act
             string actual = RegexPattern.CheckMobileNumber(userData);
-
             ///Asert
             Assert.AreEqual(expected, actual);
         }
@@ -133,9 +128,58 @@ namespace UserRegistrationTesting
         {
             ///Act
             string actual = RegexPattern.CheckPassword(userData);
-
             ///Asert
             Assert.AreEqual(expected, actual);
+        }
+
+        //Test case for properties not found and if found setting properties(UC13)
+        [TestCategory("Reflection")]
+        [TestMethod]
+        [DataRow("FirstName", "Raj", "Raj")]
+        [DataRow("LastName", "Verma", "Verma")]
+        [DataRow("EmailId", "abc123@yahoo.com", "abc123@yahoo.com")]
+        [DataRow("PhoneNum", "91 9874561230", "91 9874561230")]
+        [DataRow("Password", "abc_1234", "abc_1234")]
+        [DataRow("firstName", "Raj", "No such field found")]
+        [DataRow("lastName", "verma", "No such field found")]
+        [DataRow("emailId", "verma", "No such field found")]
+        [DataRow("password", "verma", "No such field found")]
+        [DataRow("phoneNum", "verma", "No such field found")]
+        public void TestSetFeild(string propertyName, string propertyValue, string expected)
+        {
+            try
+            {
+                UserRegReflector userRegReflector = new UserRegReflector();
+                ///Act
+                var actual = userRegReflector.SetProperty(propertyName, propertyValue);
+                ///Asert
+                Assert.AreEqual(expected, actual);
+            }
+            catch (UserRegCustomException ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }         
+        }
+
+        //Test case for invoking method(UC13)
+        [TestCategory("Reflection")]
+        [TestMethod]
+        [DataRow("TestUserRegAnnotationProperties", "Raj", "Raj")]
+        [DataRow("TestUserRegAnnotationProperties", "Verma", "Verma")]
+        public void TestInvokeUserRegMethod(string propertyName, string propertyValue, string expected)
+        {
+            try
+            {
+                UserRegReflector userRegReflector = new UserRegReflector();
+                ///Act
+                var actual = userRegReflector.SetProperty(propertyName, propertyValue);
+                ///Asert
+                Assert.AreEqual(expected, actual);
+            }
+            catch (UserRegCustomException ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
         }
     }
 }
