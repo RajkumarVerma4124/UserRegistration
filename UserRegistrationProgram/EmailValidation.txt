@@ -155,3 +155,4 @@
 2022-02-15 15:07:22.6805 INFO The given email id is valid abc@1.com
 2022-02-15 15:07:22.6805 INFO The given email id is valid abc@gmail.com.com
 2022-02-15 15:07:22.6805 INFO The given email id is valid abc+100@gmail.com
+2022-02-16 10:43:52.8128 INFO The given email id is valid Verma@gmil.com

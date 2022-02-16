@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace UserRegistrationProgram
 {
+    /// <summary>
+    /// User Registration Program To Check The User Details Using Regex And Refactoring The Code Using ambda Function
+    /// </summary>
     public class RegexPattern
     {
-        //Method to check and take the first name using regex and custom exception handling(UC1 & UC10)
-        public static string CheckFirstName(string firstName)
+        //Method to check and take the first name using regex and custom exception handling and refactor using lambda expression(UC1,UC10 & UC14)
+        public static Func<string, string> CheckFirstName = (firstName) =>
         {
             try
             {
@@ -27,7 +31,7 @@ namespace UserRegistrationProgram
                     throw new UserRegistrationException(UserRegistrationException.ExceptionTypes.INVALID_MESSAGE_EXCEPTION, "First name should starts with Cap and should have minimum 3 characters");
                 }
             }
-            catch(UserRegistrationException ex)
+            catch (UserRegistrationException ex)
             {
                 return ex.Message;
             }
@@ -36,10 +40,10 @@ namespace UserRegistrationProgram
                 return ex.Message;
             }
 
-        }
+        };
 
-        //Method to check and take the last name using regex(UC2)
-        public static string CheckLastName(string lastName)
+        //Method to check and take the last name using regex and refactor using lambda expression(UC2,UC10 UC14)
+        public static Func<string, string> CheckLastName = (lastName) =>
         {
             try
             {
@@ -68,10 +72,10 @@ namespace UserRegistrationProgram
             {
                 return ex.Message;
             }
-        }
+        };
 
-        //Method to check and take the valid email using regex(UC3)
-        public static string CheckEmail(string emailId)
+        //Method to check and take the valid email using regex and refactor using lambda expression(UC3,UC10 UC14)
+        public static Func<string, string> CheckEmail = (emailId) =>
         {
             try
             {
@@ -101,10 +105,10 @@ namespace UserRegistrationProgram
             {
                 return ex.Message;
             }
-        }
+        };
 
-        //Method to check and take the valid mobile number using regex(UC4)
-        public static string CheckMobileNumber(string mobileNum)
+        //Method to check and take the valid mobile number using regex and refactor using lambda expression(UC4,UC10 UC14)
+        public static Func<string, string> CheckMobileNumber = (mobileNum) =>
         {
             try
             {
@@ -119,13 +123,13 @@ namespace UserRegistrationProgram
                 {
                     Console.Write("The given mobile number is valid : ");
                     return mobileNum;
-                } 
+                }
                 else
                 {
                     throw new UserRegistrationException(UserRegistrationException.ExceptionTypes.INVALID_MESSAGE_EXCEPTION, "The mobile number should follow 91 10 digits E.g. 91 9919819801");
                 }
             }
-            catch(UserRegistrationException ex)
+            catch (UserRegistrationException ex)
             {
                 return ex.Message;
             }
@@ -133,10 +137,10 @@ namespace UserRegistrationProgram
             {
                 return ex.Message;
             }
-        }
+        };
 
-        //Method to check and take the valid password using regex(UC5,UC6,UC7 & UC8)
-        public static string CheckPassword(string password)
+        //Method to check and take the valid password using regex and refactor using lambda expression(UC5,UC6,UC7,UC8,UC10 UC14)
+        public static Func<string, string> CheckPassword = (password) =>
         {
             try
             {
@@ -167,6 +171,6 @@ namespace UserRegistrationProgram
             {
                 return ex.Message;
             }
-        }
+        };
     }
 }
