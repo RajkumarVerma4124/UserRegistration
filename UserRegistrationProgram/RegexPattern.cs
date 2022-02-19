@@ -23,8 +23,7 @@ namespace UserRegistrationProgram
                 }
                 if (Regex.IsMatch(firstName, fNamePattern))
                 {
-                    Console.Write("The entered first name is valid : ");
-                    return firstName;
+                    return "The entered first name is valid";
                 }
                 else
                 {
@@ -56,8 +55,7 @@ namespace UserRegistrationProgram
                 }
                 if (Regex.IsMatch(lastName, lNamePattern))
                 {
-                    Console.Write("The given last name is valid : ");
-                    return lastName;
+                    return "The given last name is valid";
                 }
                 else
                 {
@@ -88,9 +86,8 @@ namespace UserRegistrationProgram
                 }
                 if (Regex.IsMatch(emailId, emailIdPattern))
                 {
-                    Console.Write("The given email id is valid : ");
                     NLog.SuccessInfo("The given email id is valid " + emailId);
-                    return emailId;
+                    return "The given email id is valid";
                 }
                 else
                 {
@@ -121,8 +118,7 @@ namespace UserRegistrationProgram
                 }
                 if (Regex.IsMatch(mobileNum, mobNumPattern))
                 {
-                    Console.Write("The given mobile number is valid : ");
-                    return mobileNum;
+                    return "The given mobile number is valid";
                 }
                 else
                 {
@@ -155,8 +151,7 @@ namespace UserRegistrationProgram
                 }
                 if (Regex.IsMatch(password, passwordPattern) && count == 1)
                 {
-                    Console.Write("The given password is valid : ");
-                    return password;
+                    return "The given password is valid";
                 }
                 else
                 {

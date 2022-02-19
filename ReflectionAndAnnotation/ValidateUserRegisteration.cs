@@ -54,7 +54,7 @@ namespace ReflectionAndAnnotation
         //Method to check the valid annotations
         public void TestUserRegAnnotationProperties()
         {
-            ValidationContext validationContext = new ValidationContext(userRegAnnotation, null, null);
+            ValidationContext validationContext = new ValidationContext(userRegAnnotation);
             List<ValidationResult> validationResults = new List<ValidationResult>();
             bool valid = Validator.TryValidateObject(userRegAnnotation, validationContext, validationResults, true);
             if (!valid)
